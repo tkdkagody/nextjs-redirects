@@ -3,6 +3,7 @@ const API_KEY = process.env.API_KEY;
 
 const nextConfig = {
   reactStrictMode: true,
+  target: "serverless",
   swcMinify: true,
   images: {
     domains: ["image.tmdb.org"],
