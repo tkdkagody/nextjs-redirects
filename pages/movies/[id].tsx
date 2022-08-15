@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { MovieDetail } from "../../types";
 import Seo from "../../components/Seo";
+import { SERVER_URL } from "../../constants";
 function Detail({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -30,7 +31,7 @@ export default Detail;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-  const res = await fetch(`http://localhost:3000/api/movies/${id}`);
+  const res = await fetch(`${SERVER_URL}/api/movies/${id}`);
   const data: MovieDetail = await res.json();
   return {
     props: {
