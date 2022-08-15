@@ -6,6 +6,8 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["image.tmdb.org"],
+    loader: "akamai",
+    path: "",
   },
   async redirects() {
     return [
