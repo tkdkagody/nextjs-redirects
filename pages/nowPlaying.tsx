@@ -4,12 +4,12 @@ import Seo from "../components/Seo";
 import { SERVER_URL } from "../constants";
 import { MovieInfo } from "../types";
 
-const Home = ({
+const nowPlaying = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className="container">
-      <Seo title="Home" />
+      <Seo title="상영중" />
       {data?.map((movie: MovieInfo) => (
         <>
           <Movie
@@ -33,8 +33,11 @@ const Home = ({
     </div>
   );
 };
+
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { results } = await (await fetch(`${SERVER_URL}/api/movies`)).json();
+  const { results } = await (
+    await fetch(`${SERVER_URL}/api/movies/now_playing`)
+  ).json();
   const data = results;
   return {
     props: {
@@ -42,4 +45,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
-export default Home;
+
+export default nowPlaying;
