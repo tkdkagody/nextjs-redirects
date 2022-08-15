@@ -11,14 +11,14 @@ const upcoming = ({
     <div className="container">
       <Seo title="개봉예정" />
       {data?.map((movie: MovieInfo) => (
-        <>
+        <div key={movie.id}>
           <Movie
             id={movie.id}
             poster_path={movie.poster_path}
             title={movie.title}
             vote_average={movie.vote_average}
           />
-        </>
+        </div>
       ))}
 
       {/* style */}
