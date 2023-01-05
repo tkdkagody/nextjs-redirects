@@ -21,9 +21,10 @@ export default Detail;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
+  console.log(id);
   const res = await fetch(
     //`https://moverse.club/api/v1/main/stage/stages/${stageId}`
-    `https://moverse.club/api/v1/main/stage/stages/639ae44d062068797f1961e8`
+    `https://moverse.club/api/v1/main/stage/stages/${id}`
   );
   const data: StageDetail = await res.json();
   return {
