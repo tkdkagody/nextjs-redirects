@@ -1,5 +1,6 @@
 export interface SeoProps {
   title: string;
+  img: string;
 }
 
 export interface StageInfo {

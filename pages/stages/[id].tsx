@@ -12,7 +12,7 @@ function Detail({
 
   return (
     <MainContainer>
-      <Seo title={stageDetail.title} />
+      <Seo title={stageDetail.title} img={stageDetail.thumbnailUrl} />
       <BackImage src={stageDetail.thumbnailUrl} alt={stageDetail.title} />
       <Title>{stageDetail.title}</Title>
     </MainContainer>

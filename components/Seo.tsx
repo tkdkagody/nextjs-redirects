@@ -1,16 +1,16 @@
 import Head from "next/head";
 import { SeoProps } from "../types";
 
-const Seo = ({ title }: SeoProps) => {
+const Seo = ({ title, img }: SeoProps) => {
   return (
     <Head>
-      <title>MOVERSE.CLUB</title>
-      <meta property="og:title" content={title} />
+      <title>{title} </title>
       {/* <meta property="og:url" content="https://moverse.club/" /> */}
       <meta
         property="og:description"
         content="3D Motion Solution, Your Move Universe"
       />
+      <meta property="og:image" content={img} />
     </Head>
   );
 };
