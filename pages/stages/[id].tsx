@@ -4,6 +4,7 @@ import { useState } from "react";
 import { StageDetail } from "../../types";
 import Seo from "../../components/Seo";
 import { SERVER_URL } from "../../constants";
+
 function Detail({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {

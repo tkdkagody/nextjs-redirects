@@ -1,5 +1,5 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import Movie from "../components/Movie";
+import Stage from "../components/Stage";
 import Seo from "../components/Seo";
 import { SERVER_URL } from "../constants";
 import { StageInfo } from "../types";
@@ -15,7 +15,7 @@ const Home = ({
         console.log(stage);
         return (
           <div key={stage._id}>
-            <Movie
+            <Stage
               _id={stage._id}
               thumbnailUrl={stage.thumbnailUrl}
               title={stage.title}
