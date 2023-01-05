@@ -13,8 +13,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/contact",
-        destination: "/form",
+        source: "/stages/:path*",
+        destination: "http://moverse.club/stages/:path*",
         permanent: false,
       },
     ];

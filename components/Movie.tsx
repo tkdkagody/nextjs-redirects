@@ -8,7 +8,7 @@ function Movie({ id, poster_path, title, vote_average }: MovieInfo) {
   return (
     <div
       onClick={() => {
-        router.push(`/movies/${id}`);
+        router.push(`/stages/${id}`);
       }}
       className="movie"
       key={id}
