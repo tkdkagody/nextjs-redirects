@@ -14,7 +14,7 @@ const nextConfig = {
     return [
       {
         source: "/stages/:path*",
-        destination: "http://moverse.club/stages/:path*",
+        destination: "http://aa/:path*",
         permanent: false,
       },
     ];
