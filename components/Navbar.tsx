@@ -10,17 +10,7 @@ const Navbar: NextPage = () => {
       {/* <Image src="/logo.png" alt="logo" width={300} height={70} /> */}
       <div>
         <Link href="/">
-          <a className={router.pathname === "/" ? "active" : ""}>인기 있는</a>
-        </Link>
-        <Link href="/nowPlaying">
-          <a className={router.pathname === "/nowPlaying" ? "active" : ""}>
-            상영 중
-          </a>
-        </Link>
-        <Link href="/upcoming">
-          <a className={router.pathname === "/upcoming" ? "active" : ""}>
-            개봉 예정
-          </a>
+          <a className={router.pathname === "/" ? "active" : ""}>stages</a>
         </Link>
       </div>
 
