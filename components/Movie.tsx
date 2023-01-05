@@ -1,21 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { MovieInfo } from "../types";
+import { StageInfo } from "../types";
 import styled from "styled-components";
 
-function Movie({ id, poster_path, title }: MovieInfo) {
+function Movie({ _id, thumbnailUrl, title }: StageInfo) {
   const router = useRouter();
   return (
     <div
       onClick={() => {
-        router.push(`/stages/${id}`);
+        router.push(`/stages/${_id}`);
       }}
       className="movie"
-      key={id}
+      key={_id}
     >
-      <Image src={poster_path} alt={title} />
+      <Image src={thumbnailUrl} alt={title} />
       <h4>
-        <Link href={`/stages/${id}`}>
+        <Link href={`/stages/${_id}`}>
           <a>{title}</a>
         </Link>
       </h4>

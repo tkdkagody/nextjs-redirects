@@ -2,7 +2,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Movie from "../components/Movie";
 import Seo from "../components/Seo";
 import { SERVER_URL } from "../constants";
-import { MovieInfo } from "../types";
+import { StageInfo } from "../types";
 
 const Home = ({
   data,
@@ -11,15 +11,18 @@ const Home = ({
   return (
     <div className="container">
       <Seo title="Home" />
-      {data?.map((stage: MovieInfo) => (
-        <div key={stage._id}>
-          <Movie
-            id={stage._id}
-            poster_path={stage.thumbnailUrl}
-            title={stage.title}
-          />
-        </div>
-      ))}
+      {data?.map((stage: StageInfo) => {
+        console.log(stage);
+        return (
+          <div key={stage._id}>
+            <Movie
+              _id={stage._id}
+              thumbnailUrl={stage.thumbnailUrl}
+              title={stage.title}
+            />
+          </div>
+        );
+      })}
 
       {/* style */}
       <style jsx>{`

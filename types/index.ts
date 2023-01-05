@@ -2,11 +2,9 @@ export interface SeoProps {
   title: string;
 }
 
-export interface MovieInfo {
-  id: string;
+export interface StageInfo {
+  _id: string;
   title: string;
-  poster_path: string;
-  vote_average: number;
   thumbnailUrl: string;
 }
 
