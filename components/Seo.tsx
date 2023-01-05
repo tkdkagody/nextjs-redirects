@@ -4,7 +4,7 @@ import { SeoProps } from "../types";
 const Seo = ({ title }: SeoProps) => {
   return (
     <Head>
-      <title>{title} | Next Movies</title>
+      <title>MOVERSE.CLUB</title>
     </Head>
   );
 };

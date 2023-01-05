@@ -13,7 +13,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/stages/:path*",
+        source: "/old/:path*",
         destination: "http://aa/:path*",
         permanent: false,
       },

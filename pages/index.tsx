@@ -7,16 +7,16 @@ import { MovieInfo } from "../types";
 const Home = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  console.log(data);
   return (
     <div className="container">
       <Seo title="Home" />
-      {data?.map((movie: MovieInfo) => (
-        <div key={movie.id}>
+      {data?.map((stage: MovieInfo) => (
+        <div key={stage._id}>
           <Movie
-            id={movie.id}
-            poster_path={movie.poster_path}
-            title={movie.title}
-            vote_average={movie.vote_average}
+            id={stage._id}
+            poster_path={stage.thumbnailUrl}
+            title={stage.title}
           />
         </div>
       ))}
@@ -34,8 +34,15 @@ const Home = ({
   );
 };
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { results } = await (await fetch(`${SERVER_URL}/api/movies`)).json();
-  const data = results;
+  //const { results } = await (await fetch(`${SERVER_URL}/api/movies`)).json();
+
+  const response = await (
+    await fetch(`https://moverse.club/api/v1/main/stage/stages`)
+  ).json();
+
+  console.log(response.stages);
+
+  const data = response.stages;
   return {
     props: {
       data,

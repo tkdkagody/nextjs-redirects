@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MovieInfo } from "../types";
 import styled from "styled-components";
 
-function Movie({ id, poster_path, title, vote_average }: MovieInfo) {
+function Movie({ id, poster_path, title }: MovieInfo) {
   const router = useRouter();
   return (
     <div
@@ -13,16 +13,13 @@ function Movie({ id, poster_path, title, vote_average }: MovieInfo) {
       className="movie"
       key={id}
     >
-      <Image
-        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-        alt={title}
-      />
+      <Image src={poster_path} alt={title} />
       <h4>
-        <Link href={`/movies/${id}`}>
+        <Link href={`/stages/${id}`}>
           <a>{title}</a>
         </Link>
       </h4>
-      <p>평점: {vote_average} / 10</p>
+
       <style jsx>{`
         .movie {
           cursor: pointer;

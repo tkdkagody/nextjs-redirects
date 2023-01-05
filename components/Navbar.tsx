@@ -7,7 +7,7 @@ const Navbar: NextPage = () => {
 
   return (
     <nav>
-      <Image src="/logo.png" alt="logo" width={300} height={70} />
+      {/* <Image src="/logo.png" alt="logo" width={300} height={70} /> */}
       <div>
         <Link href="/">
           <a className={router.pathname === "/" ? "active" : ""}>인기 있는</a>

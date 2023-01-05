@@ -1,29 +1,19 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import styled from "styled-components";
 import { useState } from "react";
-import { MovieDetail } from "../../types";
+import { StageDetail } from "../../types";
 import Seo from "../../components/Seo";
 import { SERVER_URL } from "../../constants";
 function Detail({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [movieDetail, setMovieDetail] = useState<MovieDetail>(data);
+  const [stageDetail, setStageDetail] = useState<StageDetail>(data.stage);
 
   return (
     <MainContainer>
-      <Seo title={movieDetail.title} />
-      <BackImage
-        src={`https://image.tmdb.org/t/p/w500/${movieDetail.backdrop_path}`}
-        alt={movieDetail.title}
-      />
-      <Title>
-        {movieDetail.title} ({movieDetail.original_title}){" "}
-        {movieDetail.adult ? <AdultBadge>19</AdultBadge> : null}
-      </Title>
-      <SubTitle>{movieDetail.tagline}</SubTitle>
-      <Overview>{movieDetail.overview}</Overview>
-      <Runtime>Runtime : {movieDetail.runtime}분</Runtime>
-      <Release>Release : {movieDetail.release_date}</Release>
+      <Seo title={stageDetail.title} />
+      <BackImage src={stageDetail.thumbnailUrl} alt={stageDetail.title} />
+      <Title>{stageDetail.title}</Title>
     </MainContainer>
   );
 }
@@ -31,8 +21,11 @@ export default Detail;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-  const res = await fetch(`${SERVER_URL}/api/movies/${id}`);
-  const data: MovieDetail = await res.json();
+  const res = await fetch(
+    //`https://moverse.club/api/v1/main/stage/stages/${stageId}`
+    `https://moverse.club/api/v1/main/stage/stages/639ae44d062068797f1961e8`
+  );
+  const data: StageDetail = await res.json();
   return {
     props: {
       data,
