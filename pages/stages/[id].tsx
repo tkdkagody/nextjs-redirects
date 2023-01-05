@@ -1,14 +1,19 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StageDetail } from "../../types";
 import Seo from "../../components/Seo";
-import { SERVER_URL } from "../../constants";
+import { useRouter } from "next/router";
 
 function Detail({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [stageDetail, setStageDetail] = useState<StageDetail>(data.stage);
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(`https://moverse.club/stages/63b2799d48da2a16e09ea55e`);
+  }, []);
 
   return (
     <MainContainer>
