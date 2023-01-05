@@ -10,7 +10,7 @@ const Seo = ({ title, img }: SeoProps) => {
         property="og:description"
         content="3D Motion Solution, Your Move Universe"
       />
-      <meta property="og:image" content={img} />
+      <meta property="og:image" content={img ? img : ""} />
     </Head>
   );
 };

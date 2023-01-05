@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { StageInfo } from "../types";
 import styled from "styled-components";
 
-function Movie({ _id, thumbnailUrl, title }: StageInfo) {
+function Stage({ _id, thumbnailUrl, title }: StageInfo) {
   const router = useRouter();
   return (
     <div
@@ -49,4 +49,4 @@ const Image = styled.img`
   }
 `;
 
-export default Movie;
+export default Stage;

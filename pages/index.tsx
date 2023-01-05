@@ -7,10 +7,9 @@ import { StageInfo } from "../types";
 const Home = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  console.log(data);
   return (
     <div className="container">
-      <Seo title="Home" />
+      <Seo title="Home" img={""} />
       {data?.map((stage: StageInfo) => {
         console.log(stage);
         return (
