@@ -12,7 +12,7 @@ function Detail({
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`https://moverse.club/stages/63b2799d48da2a16e09ea55e`);
+    router.push(`https://moverse.club/stages/${data.stage._id}`);
   }, []);
 
   return (
