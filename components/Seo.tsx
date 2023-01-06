@@ -4,7 +4,7 @@ import { SeoProps } from "../types";
 const Seo = ({ title, img }: SeoProps) => {
   return (
     <Head>
-      <title>{title} </title>
+      <title>{title}</title>
       <meta
         property="og:description"
         content="3D Motion Solution, Your Move Universe"

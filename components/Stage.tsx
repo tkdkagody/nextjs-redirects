@@ -10,7 +10,7 @@ function Stage({ _id, thumbnailUrl, title }: StageInfo) {
       onClick={() => {
         router.push(`/stages/${_id}`);
       }}
-      className="movie"
+      className="stage"
       key={_id}
     >
       <Image src={thumbnailUrl} alt={title} />
@@ -21,15 +21,20 @@ function Stage({ _id, thumbnailUrl, title }: StageInfo) {
       </h4>
 
       <style jsx>{`
-        .movie {
+        .stage {
           cursor: pointer;
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-        .movie h4 {
+        .stage h4 {
           font-size: 18px;
           text-align: center;
           margin-bottom: 0;
         }
-        .movie p {
+        .stage p {
           margin-top: 2px;
           font-size: 13px;
           text-align: center;
@@ -41,6 +46,7 @@ function Stage({ _id, thumbnailUrl, title }: StageInfo) {
 
 const Image = styled.img`
   max-width: 100%;
+
   border-radius: 12px;
   transition: transform 0.2s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;

@@ -1,20 +1,17 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 const Navbar: NextPage = () => {
   const router = useRouter();
 
   return (
     <nav>
-      {/* <Image src="/logo.png" alt="logo" width={300} height={70} /> */}
       <div>
         <Link href="/">
           <a className={router.pathname === "/" ? "active" : ""}>stages</a>
         </Link>
       </div>
 
-      {/* styles JSX */}
       <style jsx>{`
         nav {
           display: flex;

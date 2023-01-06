@@ -12,11 +12,12 @@ a {
 }
 
 body {
-  max-width: 520px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 100%;
   background-color: black;
   color: white;
+  overflow-x: hidden; 
+
 }
 
 * {
@@ -26,9 +27,12 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+   
+    
   }
   body {
     color: white;
-    background: black;
+    background: black; 
+    
   }
 }

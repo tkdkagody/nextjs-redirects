@@ -11,9 +11,9 @@ function Detail({
   const [stageDetail, setStageDetail] = useState<StageDetail>(data.stage);
   const router = useRouter();
 
-  useEffect(() => {
-    router.push(`https://moverse.club/stages/${data.stage._id}`);
-  }, []);
+  // useEffect(() => {
+  //   router.push(`https://moverse.club/stages/${data.stage._id}`);
+  // }, []);
 
   return (
     <MainContainer>
@@ -27,11 +27,7 @@ export default Detail;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-  console.log(id);
-  const res = await fetch(
-    //`https://moverse.club/api/v1/main/stage/stages/${stageId}`
-    `https://moverse.club/api/v1/main/stage/stages/${id}`
-  );
+  const res = await fetch(`${process.env.APP_DOMAIN}/stage/stages/${id}`);
   const data: StageDetail = await res.json();
   return {
     props: {
@@ -47,6 +43,7 @@ const MainContainer = styled.div`
   margin-top: 30px;
   margin-left: 12px;
   margin-right: 12px;
+  width: 50vw;
 `;
 
 const BackImage = styled.img``;
@@ -56,30 +53,4 @@ const Title = styled.h2`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2px;
-`;
-
-const AdultBadge = styled.div`
-  background-color: red;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-`;
-
-const SubTitle = styled.span`
-  font-size: 13px;
-`;
-
-const Release = styled.p`
-  font-weight: bold;
-  margin-top: 2px;
-`;
-
-const Runtime = styled(Release)``;
-
-const Overview = styled.p`
-  padding: 20px 20px 20px 20px;
-  border: 3px solid #222222;
-  border-radius: 10px;
-  font-size: 16px;
 `;

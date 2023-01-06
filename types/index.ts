@@ -10,13 +10,6 @@ export interface StageInfo {
 }
 
 export interface StageDetail {
-  backdrop_path: string;
-  original_title: string;
   title: string;
-  tagline: string;
-  release_date: string;
-  overview: string;
-  runtime: number;
-  adult: boolean;
   thumbnailUrl: string;
 }
