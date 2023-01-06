@@ -10,11 +10,6 @@ const nextConfig = {
         destination: "http://moverse.club/stages",
         permanent: false,
       },
-      {
-        source: "/",
-        destination: "http://moverse.club/",
-        permanent: false,
-      },
     ];
   },
   async rewrites() {
