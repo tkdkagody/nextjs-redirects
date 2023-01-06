@@ -2,7 +2,13 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  target: "serverless",
   swcMinify: true,
+  images: {
+    domains: ["image.tmdb.org"],
+    loader: "akamai",
+    path: "",
+  },
   async redirects() {
     return [
       {
