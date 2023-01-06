@@ -11,9 +11,9 @@ function Detail({
   const [stageDetail, setStageDetail] = useState<StageDetail>(data.stage);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   router.push(`https://moverse.club/stages/${data.stage._id}`);
-  // }, []);
+  useEffect(() => {
+    router.push(`https://moverse.club/stages/${data.stage._id}`);
+  }, []);
 
   return (
     <MainContainer>
