@@ -9,7 +9,7 @@ const Stages = ({
   return (
     <div className="container">
       <Seo title="Stages" img={""} />
-      {data?.map((stage: StageInfo) => {
+      {/* {data?.map((stage: StageInfo) => {
         return (
           <div key={stage._id} className="stageWrapper">
             <Stage
@@ -19,7 +19,7 @@ const Stages = ({
             />
           </div>
         );
-      })}
+      })} */}
 
       <style jsx>{`
         .container {
