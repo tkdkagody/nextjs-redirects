@@ -2,7 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  target: "serverless",
   swcMinify: true,
   images: {
     domains: ["image.tmdb.org"],
