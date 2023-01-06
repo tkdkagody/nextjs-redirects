@@ -6,7 +6,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/stages" || "/",
+        source: "/stages",
+        destination: "http://moverse.club/stages",
+        permanent: false,
+      },
+      {
+        source: "/",
         destination: "http://moverse.club/stages",
         permanent: false,
       },
