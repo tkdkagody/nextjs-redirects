@@ -1,7 +1,5 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import Stage from "../components/Stage";
 import Seo from "../components/Seo";
-import { StageInfo } from "../types";
 
 const Stages = ({
   data,
