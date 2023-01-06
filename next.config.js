@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         source: "/",
-        destination: "http://moverse.club/stages",
+        destination: "http://moverse.club/",
         permanent: false,
       },
     ];
